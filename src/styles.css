@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+.invalid-feedback {
+    width: 100%;
+    color: #dc3545;
+    font-size:14px;
+}
+
+.pull-right{
+    float:right;
+}
+
+.margin-5px{
+    margin:5px !important;
+}

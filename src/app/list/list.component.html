@@ -1,0 +1,27 @@
+<div class="p-grid p-justify-end">
+    <div class="p-col">
+        <button pButton type="button" (click)="goToManage()" label="Add" class="ui-button-raised"></button>
+    </div>
+</div>
+
+<div class="p-grid">
+    <div class="p-col">
+        <p-table [value]="lists">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>UserId</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-list>
+                <tr>
+                    <td>{{list.userId}}</td>
+                    <td>{{list.title}}</td>
+                    <td>{{list.body}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+    </div>
+</div>

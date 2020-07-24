@@ -1,0 +1,56 @@
+<div class="p-grid p-justify-center">
+    <div class="p-col-6">
+        <p-panel header="Manage detail">
+            <form [formGroup]="manageForm" (ngSubmit)="save()">
+                <div class="p-grid">
+                    <div class="p-col-3">
+                        User Id
+                    </div>
+                    <div class="p-col">
+                        <p-inputNumber formControlName="userId">
+                        </p-inputNumber>
+                        <div *ngIf="submitted && f.userId.errors" class="invalid-feedback">
+                            <div *ngIf="f.userId.errors.required">User id is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-grid">
+                    <div class="p-col-3">
+                        Title
+                    </div>
+                    <div class="p-col">
+                        <input type="text" pInputText formControlName="title" />
+                        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                            <div *ngIf="f.title.errors.required">Title is required</div>
+                            <div *ngIf="f.title.errors.maxlength">Title must be less then 40 characters</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-grid">
+                    <div class="p-col-3">
+                        Body
+                    </div>
+                    <div class="p-col">
+                        <textarea [rows]="5" [cols]="30" formControlName="body" pInputTextarea
+                            autoResize="autoResize"></textarea>
+                        <div *ngIf="submitted && f.body.errors" class="invalid-feedback">
+                            <div *ngIf="f.body.errors.required">Body is required</div>
+                            <div *ngIf="f.body.errors.maxlength">Body must be less then 100 characters</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-grid  p-justify-end">
+                    <div class="p-col">
+                        <button pButton type="button" (click)="goToList()" label="cancel"
+                            class="ui-button-raised ui-button-secondary margin-5px"></button>
+                        <button pButton type="submit" (click)="save()" label="Save"
+                            class="ui-button-raised margin-5px "></button>
+                    </div>
+                </div>
+
+
+            </form>
+        </p-panel>
+    </div>
+</div>
